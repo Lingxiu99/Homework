@@ -1,0 +1,26 @@
+# List of my favorite foods
+favorite_foods = ["Rice", "Sushi", "Fish", "Pasta", "Burgers"]
+
+# Adding new items
+favorite_foods.append("Chicken nuggets")
+favorite_foods.append("Pistachios")
+
+# Removing items
+favorite_foods.remove("Sushi")
+favorite_foods.pop()
+# 'Pistachios' has been removed
+
+# Items in original order
+print("Original Order:")
+for food in favorite_foods:
+    print(food)
+
+# Items in reverse order
+print("Reverse Order:")
+for food in reversed(favorite_foods):
+    print(food)
+
+# Items with index
+print("List with Index:")
+for index, food in enumerate(favorite_foods):
+    print(f"{index + 1}. {food}")
