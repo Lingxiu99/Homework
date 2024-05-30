@@ -1,0 +1,39 @@
+#!/bin/bash
+
+# Generate a random number between 1 and 100
+secret_number=$(( (RANDOM % 100) + 1 ))
+
+# Initialize variables
+guess=""
+attempts=0
+
+# Welcome message
+echo "Welcome to the Number Guessing Game!"
+echo "I'm thinking of a number between 1 and 100."
+
+# Main game loop
+while [ "$guess" != "$secret_number" ]; do
+    # Prompt the user for a guess
+    read -p "Enter your guess: " guess
+
+    # Check if the input is a valid number
+    if ! [[ "$guess" =~ ^[0-9]+$ ]]; then
+        echo "Invalid input. Please enter a number."
+        continue
+    fi
+
+    # Convert guess to an integer
+    guess=$((guess))
+
+    # Increment the number of attempts
+    ((attempts++))
+
+    # Compare the guess with the secret number
+    if [ "$guess" -gt "$secret_number" ]; then
+        echo "Too High! Try a lower number."
+    elif [ "$guess" -lt "$secret_number" ]; then
+        echo "Too Low! Try a higher number."
+    else
+        echo "Congratulations! You guessed the number correctly in $attempts attempts."
+    fi
+done
