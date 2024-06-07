@@ -1,0 +1,31 @@
+# Define the dictionaries for each person
+person1 = {
+    "name": "Alice",
+    "age": 30,
+    "city": "New York",
+    "occupation": "Engineer"
+}
+
+person2 = {
+    "name": "Bob",
+    "age": 25,
+    "city": "Los Angeles",
+    "occupation": "Artist"
+}
+
+person3 = {
+    "name": "Charlie",
+    "age": 35,
+    "city": "Chicago",
+    "occupation": "Doctor"
+}
+
+# Store all dictionaries in a list
+people = [person1, person2, person3]
+
+# Loop through the list and print out details for each person
+for person in people:
+    print("Details about the person:")
+    for key, value in person.items():
+        print(f"{key}: {value}")
+    print("\n")  # Adding a newline for better readability
