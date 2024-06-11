@@ -1,0 +1,56 @@
+# List of movies with title, rating, and category
+movies = [
+    {'title': 'Inception', 'rating': 8.8, 'category': 'Sci-Fi'},
+    {'title': 'The Godfather', 'rating': 9.2, 'category': 'Crime'},
+    {'title': 'Toy Story', 'rating': 8.3, 'category': 'Animation'},
+    {'title': 'The Dark Knight', 'rating': 9.0, 'category': 'Action'},
+    {'title': 'Pulp Fiction', 'rating': 8.9, 'category': 'Crime'},
+    {'title': 'Finding Nemo', 'rating': 8.1, 'category': 'Animation'},
+    {'title': 'The Matrix', 'rating': 8.7, 'category': 'Sci-Fi'},
+    {'title': 'Interstellar', 'rating': 8.6, 'category': 'Sci-Fi'}
+]
+
+def calculate_average_rating(movies):
+    total_rating = sum(movie['rating'] for movie in movies)
+    return total_rating / len(movies)
+
+def find_highest_rated_movie(movies):
+    highest_rated_movie = movies[0]
+    for movie in movies:
+        if movie['rating'] > highest_rated_movie['rating']:
+            highest_rated_movie = movie
+    return highest_rated_movie
+
+def find_lowest_rated_movie(movies):
+    lowest_rated_movie = movies[0]
+    for movie in movies:
+        if movie['rating'] < lowest_rated_movie['rating']:
+            lowest_rated_movie = movie
+    return lowest_rated_movie
+
+def filter_movies_by_category(movies, category):
+    filtered_movies = []
+    for movie in movies:
+        if movie['category'] == category:
+            filtered_movies.append(movie)
+    return filtered_movies
+
+# Calculate average rating
+average_rating = calculate_average_rating(movies)
+print(f"Average Rating: {average_rating:.1f}")
+
+# Find highest rated movie
+highest_rated_movie = find_highest_rated_movie(movies)
+print(f"Highest Rated Movie: {highest_rated_movie['title']} ({highest_rated_movie['rating']})")
+
+# Find lowest rated movie
+lowest_rated_movie = find_lowest_rated_movie(movies)
+print(f"Lowest Rated Movie: {lowest_rated_movie['title']} ({lowest_rated_movie['rating']})")
+
+# Filter movies by category
+category = input("Enter a category to filter by (e.g., Sci-Fi, Crime, Animation, Action): ")
+filtered_movies = filter_movies_by_category(movies, category)
+
+print(f"\nMovies in category '{category}':")
+for movie in filtered_movies:
+    print(f"- {movie['title']} ({movie['rating']})")
