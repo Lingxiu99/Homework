@@ -1,5 +1,12 @@
 # Sandwich orders
-sandwich_orders = ['tuna sandwich', 'egg sandwich', 'pork sandwich', 'vegan sandwich', 'chicken sandwich']
+sandwich_orders = ['tuna sandwich', 'egg sandwich', 'pastrami sandwich', 'bacon sandwich', 'pastrami sandwich', 'vegan sandwich', 'pastrami sandwich', 'chicken sandwich']
+
+# No pastrami
+print("Sorry, we have run out of pastrami.\n")
+
+# Remove orders of pastrami
+while 'pastrami sandwich' in sandwich_orders:
+    sandwich_orders.remove('pastrami sandwich')
 
 # Finished sandwiches
 finished_sandwiches = []
@@ -10,7 +17,7 @@ while sandwich_orders:
     print(f"I made you a {current_sandwich}.")
     finished_sandwiches.append(current_sandwich)
 
-# Finished sandwiches
+# Print finished sandwiches
 print("\nAll sandwiches have been made:")
 for sandwich in finished_sandwiches:
     print(f"{sandwich}")
