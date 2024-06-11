@@ -1,0 +1,16 @@
+# Sandwich orders
+sandwich_orders = ['tuna sandwich', 'egg sandwich', 'pork sandwich', 'vegan sandwich', 'chicken sandwich']
+
+# Finished sandwiches
+finished_sandwiches = []
+
+# Loop
+while sandwich_orders:
+    current_sandwich = sandwich_orders.pop()
+    print(f"I made you a {current_sandwich}.")
+    finished_sandwiches.append(current_sandwich)
+
+# Finished sandwiches
+print("\nAll sandwiches have been made:")
+for sandwich in finished_sandwiches:
+    print(f"{sandwich}")
