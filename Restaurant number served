@@ -1,0 +1,23 @@
+class Restaurant:
+    def __init__(self):
+        self.number_served = 0
+    
+    def number_served(self, number):
+        self.number_served = number
+    
+    def increment_number_served(self, number):
+        self.number_served += number
+
+# Create an instance
+restaurant = Restaurant()
+
+# Print original number is 0
+print("Number of customers served:", restaurant.number_served)
+
+# Change served number
+restaurant.number_served = 10
+print("Number of customers served after update:", restaurant.number_served)
+
+# Add served number
+restaurant.increment_number_served(15)
+print("Number of customers served after increment:", restaurant.number_served)
